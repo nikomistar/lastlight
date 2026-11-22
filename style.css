@@ -43,7 +43,7 @@ header.site {
 }
 
 header.site img { width: 44px; height: 44px; border-radius: 10px; }
-header.site a.name { color: var(--ink); font-weight: 600; text-decoration: none; }
+header.site a.name { color: var(--ink); font-weight: 600; text-decoration: none; white-space: nowrap; }
 header.site nav { margin-left: auto; display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
 
 a { color: var(--glow); text-underline-offset: 3px; }
@@ -82,3 +82,73 @@ section.lang:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
 code { font: 14px/1.4 ui-monospace, "SF Mono", Menlo, monospace; color: var(--ink); overflow-wrap: anywhere; }
 
 footer { margin-top: 64px; font-size: 14px; color: var(--soft); border-top: 1px solid var(--line); padding-top: 20px; }
+
+/* Landing page */
+
+main.wide { max-width: 1080px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 104px;
+}
+.hero h1 { font-size: clamp(36px, 5.2vw, 56px); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 20px; }
+.hero .lead { font-size: 20px; line-height: 1.5; color: var(--soft); margin: 0; }
+
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 32px; }
+.badge {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+}
+.cta .terms { font-size: 15px; color: var(--soft); }
+
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: #17120f;
+}
+
+.block { margin-bottom: 104px; }
+.block > h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 10px; }
+.block > .sub { font-size: 18px; margin: 0 0 36px; max-width: 620px; }
+
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.steps figure, .pair figure, .band { margin: 0; }
+figcaption { margin-top: 18px; }
+figcaption .when { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--glow); }
+figcaption h3 { font-size: 20px; line-height: 1.3; margin: 4px 0 6px; color: var(--ink); }
+figcaption p { margin: 0; font-size: 16px; }
+.band { margin-top: 24px; }
+.band + .band { margin-top: 48px; }
+
+.promises { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.promises .card { margin: 0; }
+.promises h3 { font-size: 18px; margin: 0 0 6px; color: var(--ink); }
+
+.closing { text-align: center; }
+.closing h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 12px; }
+.closing .cta { justify-content: center; }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; margin-bottom: 72px; }
+  .steps, .pair, .promises { grid-template-columns: 1fr; gap: 36px; }
+  .promises { gap: 12px; }
+  .block { margin-bottom: 72px; }
+}
+
+@media (max-width: 560px) {
+  header.site { flex-wrap: wrap; margin-bottom: 36px; }
+  header.site nav { margin-left: 0; flex-basis: 100%; gap: 6px 18px; font-size: 14px; }
+}
