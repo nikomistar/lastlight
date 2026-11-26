@@ -70,6 +70,10 @@ li { margin: 6px 0; }
 section.lang { border-top: 1px solid var(--line); padding-top: 40px; margin-top: 56px; }
 section.lang:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
 
+/* Arriving with #ru or #en in the address shows that language alone. */
+main:has(#ru:target) #en, main:has(#en:target) #ru { display: none; }
+main:has(#ru:target) #ru { border-top: 0; padding-top: 0; margin-top: 0; }
+
 .card {
   background: var(--card);
   border: 1px solid var(--line);
